@@ -16,7 +16,7 @@ class TestApp(unittest.TestCase):
         conn.close()
 
     def test_sqlite_connection(self):
-        conn = sqlite3.connect('/wrong/path/db.sqlite')
+        conn = sqlite3.connect('db.sqlite')
         c = conn.cursor()
         c.execute("SELECT 1")
         self.assertEqual(c.fetchone()[0], 1)

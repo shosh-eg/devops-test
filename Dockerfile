@@ -1,4 +1,6 @@
 FROM python:3.9-slim
 WORKDIR /app
 COPY . .
-CMD python app.py
+RUN pip install -r requirements.txt
+EXPOSE 5000
+CMD ["python", "run.py"]
